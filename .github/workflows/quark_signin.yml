@@ -2,7 +2,7 @@ name: Quark签到
 
 on:
   schedule:
-    - cron: '7 1 * * *'   # 北京时间 09:00 (UTC+8 -> UTC+1)
+    - cron: '53 3 * * *'   # 北京时间 11:53（避开 UTC 00-02 schedule 高峰丢任务）
     - cron: '7 5 * * *'   # 北京时间 13:00 (UTC+8 -> UTC+5)
   workflow_dispatch:      # 允许手动触发
 
