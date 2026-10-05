@@ -76,6 +76,14 @@ jobs:
           COOKIE_QUARK: ${{ secrets.COOKIE_QUARK }}
         run: python checkIn_Quark.py
 
+      - name: 更新仓库简介积分
+        if: always()
+        env:
+          ADMIN_PAT: ${{ secrets.ADMIN_PAT }}
+          COOKIE_QUARK: ${{ secrets.COOKIE_QUARK }}
+        run: python update_desc.py
+        continue-on-error: true
+
       - name: 标记今天签到成功
         if: success()
         run: |
